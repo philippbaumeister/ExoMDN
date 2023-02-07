@@ -1,0 +1,14 @@
+name: exomdn
+dependencies:
+    - python=3.10
+    - tensorflow=2.11.*
+    - tensorflow-probability=0.15.*
+    - scikit-learn=0.11.*
+    - numpy
+    - pandas
+    - scipy
+    - matplotlib
+    - seaborn
+    - joblib
+    - ipywidgets
+    - jupyter
