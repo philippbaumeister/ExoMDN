@@ -1,3 +1,4 @@
+import json
 import os
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -21,7 +22,7 @@ class LoadModelWidget(widgets.VBox):
         self.update_model_list()
         self.load_model_button = widgets.Button(description="Load model")
         self.update_list_button = widgets.Button(description="Update list")
-        self.output = widgets.Output(layout=widgets.Layout(width="100%", max_height="300px"))
+        self.output = widgets.Output(layout=widgets.Layout(width="100%"))
 
         self.children = [label,
                          self.select_model,
@@ -43,6 +44,8 @@ class LoadModelWidget(widgets.VBox):
             return
         with self.output:
             self.parent.model = Model(self.models_path / self.select_model.value)
+            print(f"MDN inputs: {self.parent.model.inputs}")
+            print(f"MDN outputs: {self.parent.model.outputs}")
 
     def on_update_list_button_clicked(self, b):
         self.output.clear_output(wait=True)
@@ -55,6 +58,9 @@ class PredictionWidget(widgets.VBox):
     def __init__(self, parent: "ExoMDN"):
         super().__init__()
         self.parent = parent
+
+        with open(self.parent.data_path / "exoplanets.json", "r") as f:
+            self.exoplanet_data = json.load(f)
 
         # Tab 'planet parameters'
         self.use_error = widgets.Checkbox(value=False, description="Include uncertainties?", indent=True)
@@ -89,10 +95,18 @@ class PredictionWidget(widgets.VBox):
 
         tab2 = widgets.VBox([self.samples_input, self.subsamples_input])
 
+        # load planet data tab
+        self.planet_selection = widgets.Select(layout=widgets.Layout(width="30%", height="200px"))
+        self.planet_selection.options = self.exoplanet_data.keys()
+        self.planet_info = widgets.Output(layout=widgets.Layout(width="60%", height="200px"))
+        self.load_planet_data_button = widgets.Button(description="Load selected planet",
+                                                      layout=widgets.Layout(width="30%"))
+        tab3 = widgets.VBox([widgets.HBox([self.planet_selection, self.planet_info]), self.load_planet_data_button])
+
         self.tab = widgets.Accordion()
-        self.tab.children = [tab1, tab2]
-        self.tab.titles = ["Planet parameters", "Options"]
-        self.tab.selected_index = 0
+        self.tab.children = [tab3, tab1, tab2]
+        self.tab.titles = ["Load exoplanet data", "Planet parameters", "Options"]
+        self.tab.selected_index = 1
 
         self.predict_button = widgets.Button(description="Predict interior", layout=widgets.Layout(width="30%"))
 
@@ -103,7 +117,9 @@ class PredictionWidget(widgets.VBox):
 
         # setup callbacks
         self.use_error.observe(self.use_error_checkbox_change, names="value")
+        self.planet_selection.observe(self.on_select_planet_data_change, names="value")
         self.predict_button.on_click(self.on_predict_button_clicked)
+        self.load_planet_data_button.on_click(self.on_load_planet_button_clicked)
 
     def use_error_checkbox_change(self, change):
         for widget in self.parameter_inputs.values():
@@ -146,6 +162,40 @@ class PredictionWidget(widgets.VBox):
                     self.parent.model.predict(x=[values], samples=samples)
                 self.parent.uncertainty_samples = None
             print("== Done! ==")
+
+    def on_load_planet_button_clicked(self, b):
+        with self.planet_info:
+            selected = self.exoplanet_data[self.planet_selection.value]
+            for key in self.parent.model.inputs:
+                try:
+                    value = selected[key]
+                    value_err = selected[f"{key}_err"]
+                except KeyError:
+                    value = self.parent.model.input_properties[key]["default_value"]
+                    value_err = 0
+                self.parameter_inputs[key].parameter.value = value
+                self.parameter_inputs[key].error.value = value_err
+            print("--- Loaded planet parameters ---")
+
+    def on_select_planet_data_change(self, change):
+        self.planet_info.clear_output()
+        no_data = []
+        with self.planet_info:
+            planet = change["new"]
+            selected = self.exoplanet_data[planet]
+            print(f"== {planet} ==")
+            for key in self.parent.model.inputs:
+                try:
+                    value = selected[key]
+                    value_err = selected.get(f"{key}_err", 0)
+                    print(f"{key} = {value} ± {value_err}")
+                except KeyError:
+                    no_data.append(key)
+                    continue
+            print(f"Reference: {selected['ref_name']}")
+            print(f"Reference (T_eq): {selected['eqt_refname']}")
+            if len(no_data) > 0:
+                print(f"No values found for {'; '.join(no_data)}. Using default values.")
 
 
 class ParameterWithErrorInput(widgets.HBox):

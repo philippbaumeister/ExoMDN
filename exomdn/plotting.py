@@ -25,11 +25,11 @@ labels = {
     }
 
 
-def pairgrid_logs(data, columns, data_components=None, height=2.5,
-                  hexbin_kws=None,
-                  hist_kws=None,
-                  scatter_kws=None,
-                  mixture_kws=None):
+def cornerplot_logratios(data, columns, data_components=None, height=2.5,
+                         hexbin_kws=None,
+                         hist_kws=None,
+                         scatter_kws=None,
+                         mixture_kws=None):
     if mixture_kws is None:
         mixture_kws = {}
     if scatter_kws is None:
@@ -56,22 +56,22 @@ def pairgrid_logs(data, columns, data_components=None, height=2.5,
     if data_components is not None:
         len_mixture = len(data_components)
         if len_mixture > 200:
-            warnings.warn(f"Not showing mixture comonents because number of mixture components is too large (n"
+            warnings.warn(f"Not showing mixture compnents because number of mixture components is too large (n"
                           f"={len_mixture})")
         else:
             g.data = data_components
             g.map_upper(confidence_ellipse, data=data_components, **_mixture_kws)
 
-            norm = mpl.colors.Normalize(vmin=0, vmax=data_components["prob"].max())
+            norm = mpl.colors.Normalize(vmin=0, vmax=data_components["weight"].max())
             cmap = mpl.cm.ScalarMappable(norm=norm, cmap=_mixture_kws["cmap"])
             cbar_ax = g.fig.add_axes([0.975, 0.65, 0.03, 0.3])
             plt.colorbar(cmap, cax=cbar_ax, label="Mixture weights")
 
-    g = relabel_pairgrid(g)
+    g = relabel_axes(g)
     return g
 
 
-def pairgrid(data, columns, height=2, quantiles=True, hist_kws=None, hexbin_kws=None, line_kws=None):
+def cornerplot(data, columns, height=2, quantiles=True, hist_kws=None, hexbin_kws=None, line_kws=None):
     if line_kws is None:
         line_kws = {}
     if hexbin_kws is None:
@@ -117,7 +117,7 @@ def pairgrid(data, columns, height=2, quantiles=True, hist_kws=None, hexbin_kws=
         ax.xaxis.set_minor_locator(MultipleLocator(0.1))
         ax.yaxis.set_minor_locator(MultipleLocator(0.1))
 
-    g = relabel_pairgrid(g)
+    g = relabel_axes(g)
     return g
 
 
@@ -127,17 +127,17 @@ def confidence_ellipse(x, y, **kwargs):
     max_alpha = kwargs.pop("max_alpha", 1)
     min_alpha = kwargs.pop("min_alpha", 0)
 
-    norm = mpl.colors.Normalize(vmin=0, vmax=df["prob"].max())
+    norm = mpl.colors.Normalize(vmin=0, vmax=df["weight"].max())
     cmap = mpl.cm.ScalarMappable(norm=norm, cmap=cmap)
 
-    min_p, max_p = (df["prob"].min(), df["prob"].max())
+    min_p, max_p = (df["weight"].min(), df["weight"].max())
 
     ax = plt.gca()
     ax.scatter(x, y, **kwargs, zorder=10)
     for i, row in df.iterrows():
         covar = np.diag(row[[f"var_{x.name}", f"var_{y.name}"]])
         mean = row[[x.name, y.name]]
-        prob = row["prob"]
+        prob = row["weight"]
 
         v, w = linalg.eigh(covar)
         v = 2. * np.sqrt(2.) * np.sqrt(v)
@@ -153,7 +153,7 @@ def confidence_ellipse(x, y, **kwargs):
         ax.add_artist(ell)
 
 
-def relabel_pairgrid(figure):
+def relabel_axes(figure):
     for ax in figure.axes.ravel():
         if ax is None:
             continue

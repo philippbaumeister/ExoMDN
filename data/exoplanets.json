@@ -1,0 +1,816 @@
+{
+  "EPIC 249893012 c":{
+    "planet_mass":14.67,
+    "planet_mass_err":1.84,
+    "planet_radius":3.67,
+    "planet_radius_err":0.17,
+    "T_eq":990.0,
+    "T_eq_err":92.0,
+    "ref_name":"Hidalgo et al. 2020",
+    "eqt_refname":"Hidalgo et al. 2020"
+  },
+  "GJ 1132 b":{
+    "planet_mass":1.66,
+    "planet_mass_err":0.23,
+    "planet_radius":1.13,
+    "planet_radius_err":0.056,
+    "T_eq":529.0,
+    "T_eq_err":9.0,
+    "ref_name":"Bonfils et al. 2018",
+    "eqt_refname":"Bonfils et al. 2018"
+  },
+  "GJ 1214 b":{
+    "planet_mass":8.17,
+    "planet_mass_err":0.43,
+    "planet_radius":2.742,
+    "planet_radius_err":0.05,
+    "T_eq":596.0,
+    "T_eq_err":19.0,
+    "ref_name":"Cloutier et al. 2021",
+    "eqt_refname":" Carter et al. 2011 "
+  },
+  "GJ 143 b":{
+    "planet_mass":22.7,
+    "planet_mass_err":2.2,
+    "planet_radius":2.61,
+    "planet_radius_err":0.17,
+    "T_eq":422.0,
+    "T_eq_err":15.0,
+    "ref_name":"Dragomir et al. 2019",
+    "eqt_refname":"Dragomir et al. 2019"
+  },
+  "GJ 3470 b":{
+    "planet_mass":13.9,
+    "planet_mass_err":1.5,
+    "planet_radius":4.57,
+    "planet_radius_err":0.18,
+    "T_eq":594.0,
+    "T_eq_err":96.0,
+    "ref_name":"Awiphan et al. 2016",
+    "eqt_refname":"Kosiarek et al. 2019"
+  },
+  "GJ 3473 b":{
+    "planet_mass":1.86,
+    "planet_mass_err":0.3,
+    "planet_radius":1.264,
+    "planet_radius_err":0.05,
+    "T_eq":773.0,
+    "T_eq_err":16.0,
+    "ref_name":"Kemmer et al. 2020",
+    "eqt_refname":"Kemmer et al. 2020"
+  },
+  "GJ 357 b":{
+    "planet_mass":1.84,
+    "planet_mass_err":0.31,
+    "planet_radius":1.217,
+    "planet_radius_err":0.084,
+    "T_eq":525.0,
+    "T_eq_err":11.0,
+    "ref_name":"Luque et al. 2019",
+    "eqt_refname":"Luque et al. 2019"
+  },
+  "GJ 436 b":{
+    "planet_mass":22.1,
+    "planet_mass_err":2.3,
+    "planet_radius":4.17,
+    "planet_radius_err":0.168,
+    "T_eq":669.0,
+    "T_eq_err":22.0,
+    "ref_name":"Maciejewski et al. 2014",
+    "eqt_refname":" Southworth 2010 "
+  },
+  "GJ 486 b":{
+    "planet_mass":2.82,
+    "planet_mass_err":0.11,
+    "planet_radius":1.305,
+    "planet_radius_err":0.063,
+    "T_eq":701.0,
+    "T_eq_err":13.0,
+    "ref_name":"Trifonov et al. 2021",
+    "eqt_refname":"Trifonov et al. 2021"
+  },
+  "HD 136352 b":{
+    "planet_mass":4.72,
+    "planet_mass_err":0.42,
+    "planet_radius":1.664,
+    "planet_radius_err":0.043,
+    "T_eq":905.0,
+    "T_eq_err":14.0,
+    "ref_name":"Delrez et al. 2021",
+    "eqt_refname":"Kane et al. 2020"
+  },
+  "HD 136352 c":{
+    "planet_mass":11.24,
+    "planet_mass_err":0.65,
+    "planet_radius":2.916,
+    "planet_radius_err":0.075,
+    "T_eq":677.0,
+    "T_eq_err":11.0,
+    "ref_name":"Delrez et al. 2021",
+    "eqt_refname":"Kane et al. 2020"
+  },
+  "HD 136352 d":{
+    "planet_mass":8.82,
+    "planet_mass_err":0.93,
+    "planet_radius":2.562,
+    "planet_radius_err":0.088,
+    "T_eq":431.0,
+    "T_eq_err":7.0,
+    "ref_name":"Delrez et al. 2021",
+    "eqt_refname":"Delrez et al. 2021"
+  },
+  "HD 191939 b":{
+    "planet_mass":10.4,
+    "planet_mass_err":0.9,
+    "planet_radius":3.39,
+    "planet_radius_err":0.07,
+    "T_eq":893.0,
+    "T_eq_err":36.0,
+    "ref_name":"Lubin et al. 2022",
+    "eqt_refname":"Lubin et al. 2022"
+  },
+  "HD 191939 c":{
+    "planet_mass":7.2,
+    "planet_mass_err":1.4,
+    "planet_radius":3.08,
+    "planet_radius_err":0.07,
+    "T_eq":605.0,
+    "T_eq_err":24.0,
+    "ref_name":"Lubin et al. 2022",
+    "eqt_refname":"Lubin et al. 2022"
+  },
+  "HD 207897 b":{
+    "planet_mass":14.4,
+    "planet_mass_err":1.6,
+    "planet_radius":2.501,
+    "planet_radius_err":0.082,
+    "T_eq":632.0,
+    "T_eq_err":8.0,
+    "ref_name":"Heidari et al. 2022",
+    "eqt_refname":"Heidari et al. 2022"
+  },
+  "HD 219134 c":{
+    "planet_mass":4.36,
+    "planet_mass_err":0.22,
+    "planet_radius":1.511,
+    "planet_radius_err":0.047,
+    "T_eq":782.0,
+    "T_eq_err":6.0,
+    "ref_name":"Gillon et al. 2017",
+    "eqt_refname":"Gillon et al. 2017"
+  },
+  "HD 260655 b":{
+    "planet_mass":2.14,
+    "planet_mass_err":0.34,
+    "planet_radius":1.24,
+    "planet_radius_err":0.023,
+    "T_eq":709.0,
+    "T_eq_err":4.0,
+    "ref_name":"Luque et al. 2022",
+    "eqt_refname":"Luque et al. 2022"
+  },
+  "HD 260655 c":{
+    "planet_mass":3.09,
+    "planet_mass_err":0.48,
+    "planet_radius":1.533,
+    "planet_radius_err":0.051,
+    "T_eq":557.0,
+    "T_eq_err":3.0,
+    "ref_name":"Luque et al. 2022",
+    "eqt_refname":"Luque et al. 2022"
+  },
+  "HD 5278 b":{
+    "planet_mass":7.8,
+    "planet_mass_err":1.5,
+    "planet_radius":2.45,
+    "planet_radius_err":0.05,
+    "T_eq":943.0,
+    "T_eq_err":13.0,
+    "ref_name":"Sozzetti et al. 2021",
+    "eqt_refname":"Sozzetti et al. 2021"
+  },
+  "HD 63935 b":{
+    "planet_mass":10.8,
+    "planet_mass_err":1.8,
+    "planet_radius":2.99,
+    "planet_radius_err":0.14,
+    "T_eq":911.0,
+    "T_eq_err":27.0,
+    "ref_name":"Scarsdale et al. 2021",
+    "eqt_refname":"Scarsdale et al. 2021"
+  },
+  "HD 73583 c":{
+    "planet_mass":9.7,
+    "planet_mass_err":1.8,
+    "planet_radius":2.39,
+    "planet_radius_err":0.1,
+    "T_eq":498.0,
+    "T_eq_err":15.0,
+    "ref_name":"Barragán et al. 2021",
+    "eqt_refname":"Barragán et al. 2021"
+  },
+  "HD 97658 b":{
+    "planet_mass":8.3,
+    "planet_mass_err":1.1,
+    "planet_radius":2.12,
+    "planet_radius_err":0.06,
+    "T_eq":751.0,
+    "T_eq_err":12.0,
+    "ref_name":"Ellis et al. 2021",
+    "eqt_refname":"Ellis et al. 2021"
+  },
+  "HIP 97166 b":{
+    "planet_mass":20.0,
+    "planet_mass_err":1.5,
+    "planet_radius":2.74,
+    "planet_radius_err":0.13,
+    "T_eq":757.0,
+    "T_eq_err":25.0,
+    "ref_name":"MacDougall et al. 2021",
+    "eqt_refname":"MacDougall et al. 2021"
+  },
+  "K2-18 b":{
+    "planet_mass":8.92,
+    "planet_mass_err":1.7,
+    "planet_radius":2.37,
+    "planet_radius_err":0.22,
+    "T_eq":284.0,
+    "T_eq_err":15.0,
+    "ref_name":"Sarkis et al. 2018",
+    "eqt_refname":"Sarkis et al. 2018"
+  },
+  "K2-199 c":{
+    "planet_mass":12.4,
+    "planet_mass_err":2.3,
+    "planet_radius":2.85,
+    "planet_radius_err":0.1,
+    "T_eq":694.0,
+    "T_eq_err":17.0,
+    "ref_name":"Akana Murphy et al. 2021",
+    "eqt_refname":"Akana Murphy et al. 2021"
+  },
+  "K2-24 b":{
+    "planet_mass":19.0,
+    "planet_mass_err":2.2,
+    "planet_radius":5.4,
+    "planet_radius_err":0.2,
+    "T_eq":767.0,
+    "T_eq_err":177.0,
+    "ref_name":"Petigura et al. 2018",
+    "eqt_refname":"Petigura et al. 2018"
+  },
+  "K2-285 c":{
+    "planet_mass":15.68,
+    "planet_mass_err":2.28,
+    "planet_radius":3.53,
+    "planet_radius_err":0.08,
+    "T_eq":741.0,
+    "T_eq_err":14.0,
+    "ref_name":"Palle et al. 2019",
+    "eqt_refname":"Palle et al. 2019"
+  },
+  "K2-292 b":{
+    "planet_mass":24.5,
+    "planet_mass_err":4.4,
+    "planet_radius":2.63,
+    "planet_radius_err":0.11,
+    "T_eq":795.0,
+    "T_eq_err":33.0,
+    "ref_name":"Luque et al. 2019",
+    "eqt_refname":"Luque et al. 2019"
+  },
+  "K2-32 b":{
+    "planet_mass":15.0,
+    "planet_mass_err":1.8,
+    "planet_radius":5.299,
+    "planet_radius_err":0.191,
+    "T_eq":837.0,
+    "T_eq_err":13.0,
+    "ref_name":"Lillo-Box et al. 2020",
+    "eqt_refname":"Petigura et al. 2017"
+  },
+  "Kepler-20 c":{
+    "planet_mass":12.75,
+    "planet_mass_err":2.17,
+    "planet_radius":3.047,
+    "planet_radius_err":0.064,
+    "T_eq":772.0,
+    "T_eq_err":26.0,
+    "ref_name":"Buchhave et al. 2016",
+    "eqt_refname":"Buchhave et al. 2016"
+  },
+  "Kepler-36 b":{
+    "planet_mass":3.83,
+    "planet_mass_err":0.11,
+    "planet_radius":1.498,
+    "planet_radius_err":0.061,
+    "T_eq":978.0,
+    "T_eq_err":11.0,
+    "ref_name":"Vissapragada et al. 2020",
+    "eqt_refname":" Carter et al. 2012 "
+  },
+  "Kepler-36 c":{
+    "planet_mass":7.13,
+    "planet_mass_err":0.18,
+    "planet_radius":3.679,
+    "planet_radius_err":0.096,
+    "T_eq":928.0,
+    "T_eq_err":10.0,
+    "ref_name":"Vissapragada et al. 2020",
+    "eqt_refname":" Carter et al. 2012 "
+  },
+  "Kepler-51 d":{
+    "planet_mass":7.6,
+    "planet_mass_err":1.1,
+    "planet_radius":9.7,
+    "planet_radius_err":0.5,
+    "T_eq":381.0,
+    "T_eq_err":8.0,
+    "ref_name":" Masuda 2014 ",
+    "eqt_refname":"Libby-Roberts et al. 2020"
+  },
+  "Kepler-87 c":{
+    "planet_mass":6.4,
+    "planet_mass_err":0.8,
+    "planet_radius":6.14,
+    "planet_radius_err":0.29,
+    "T_eq":403.0,
+    "T_eq_err":4.0,
+    "ref_name":" Ofir et al. 2014 ",
+    "eqt_refname":" Ofir et al. 2014 "
+  },
+  "L 168-9 b":{
+    "planet_mass":4.6,
+    "planet_mass_err":0.56,
+    "planet_radius":1.39,
+    "planet_radius_err":0.09,
+    "T_eq":965.0,
+    "T_eq_err":20.0,
+    "ref_name":"Astudillo-Defru et al. 2020",
+    "eqt_refname":"Astudillo-Defru et al. 2020"
+  },
+  "L 98-59 c":{
+    "planet_mass":2.22,
+    "planet_mass_err":0.26,
+    "planet_radius":1.385,
+    "planet_radius_err":0.095,
+    "T_eq":553.0,
+    "T_eq_err":27.0,
+    "ref_name":"Demangeon et al. 2021",
+    "eqt_refname":"Cloutier et al. 2019"
+  },
+  "L 98-59 d":{
+    "planet_mass":1.94,
+    "planet_mass_err":0.28,
+    "planet_radius":1.521,
+    "planet_radius_err":0.119,
+    "T_eq":416.0,
+    "T_eq_err":20.0,
+    "ref_name":"Demangeon et al. 2021",
+    "eqt_refname":"Demangeon et al. 2021"
+  },
+  "LHS 1140 b":{
+    "planet_mass":6.38,
+    "planet_mass_err":0.46,
+    "planet_radius":1.635,
+    "planet_radius_err":0.046,
+    "T_eq":379.0,
+    "T_eq_err":4.0,
+    "ref_name":"Lillo-Box et al. 2020",
+    "eqt_refname":"Dittmann et al. 2017"
+  },
+  "LHS 1140 c":{
+    "planet_mass":1.76,
+    "planet_mass_err":0.17,
+    "planet_radius":1.169,
+    "planet_radius_err":0.037,
+    "T_eq":709.0,
+    "T_eq_err":8.0,
+    "ref_name":"Lillo-Box et al. 2020",
+    "eqt_refname":"Lillo-Box et al. 2020"
+  },
+  "LHS 1478 b":{
+    "planet_mass":2.33,
+    "planet_mass_err":0.2,
+    "planet_radius":1.242,
+    "planet_radius_err":0.051,
+    "T_eq":595.0,
+    "T_eq_err":10.0,
+    "ref_name":"Soto et al. 2021",
+    "eqt_refname":"Soto et al. 2021"
+  },
+  "LTT 1445 A b":{
+    "planet_mass":2.87,
+    "planet_mass_err":0.26,
+    "planet_radius":1.305,
+    "planet_radius_err":0.066,
+    "T_eq":424.0,
+    "T_eq_err":21.0,
+    "ref_name":"Winters et al. 2021",
+    "eqt_refname":"Winters et al. 2021"
+  },
+  "LTT 1445 A c":{
+    "planet_mass":1.54,
+    "planet_mass_err":0.2,
+    "planet_radius":1.147,
+    "planet_radius_err":0.055,
+    "T_eq":508.0,
+    "T_eq_err":25.0,
+    "ref_name":"Winters et al. 2021",
+    "eqt_refname":"Winters et al. 2021"
+  },
+  "LTT 3780 b":{
+    "planet_mass":2.62,
+    "planet_mass_err":0.48,
+    "planet_radius":1.332,
+    "planet_radius_err":0.072,
+    "T_eq":892.0,
+    "T_eq_err":44.0,
+    "ref_name":"Cloutier et al. 2020",
+    "eqt_refname":"Cloutier et al. 2020"
+  },
+  "LTT 3780 c":{
+    "planet_mass":8.6,
+    "planet_mass_err":1.6,
+    "planet_radius":2.3,
+    "planet_radius_err":0.16,
+    "T_eq":353.0,
+    "T_eq_err":18.0,
+    "ref_name":"Cloutier et al. 2020",
+    "eqt_refname":"Cloutier et al. 2020"
+  },
+  "TOI-1064 b":{
+    "planet_mass":13.5,
+    "planet_mass_err":1.7,
+    "planet_radius":2.587,
+    "planet_radius_err":0.043,
+    "T_eq":784.0,
+    "T_eq_err":13.0,
+    "ref_name":"Wilson et al. 2022",
+    "eqt_refname":"Wilson et al. 2022"
+  },
+  "TOI-1201 b":{
+    "planet_mass":6.28,
+    "planet_mass_err":0.84,
+    "planet_radius":2.415,
+    "planet_radius_err":0.091,
+    "T_eq":703.0,
+    "T_eq_err":15.0,
+    "ref_name":"Kossakowski et al. 2021",
+    "eqt_refname":"Kossakowski et al. 2021"
+  },
+  "TOI-1235 b":{
+    "planet_mass":5.9,
+    "planet_mass_err":0.62,
+    "planet_radius":1.694,
+    "planet_radius_err":0.08,
+    "T_eq":775.0,
+    "T_eq_err":13.0,
+    "ref_name":"Bluhm et al. 2020",
+    "eqt_refname":"Bluhm et al. 2020"
+  },
+  "TOI-1246 b":{
+    "planet_mass":8.1,
+    "planet_mass_err":1.1,
+    "planet_radius":3.01,
+    "planet_radius_err":0.06,
+    "T_eq":955.0,
+    "T_eq_err":null,
+    "ref_name":"Turtelboom et al. 2022",
+    "eqt_refname":"Turtelboom et al. 2022"
+  },
+  "TOI-1246 c":{
+    "planet_mass":8.8,
+    "planet_mass_err":1.2,
+    "planet_radius":2.51,
+    "planet_radius_err":0.08,
+    "T_eq":860.0,
+    "T_eq_err":null,
+    "ref_name":"Turtelboom et al. 2022",
+    "eqt_refname":"Turtelboom et al. 2022"
+  },
+  "TOI-1246 e":{
+    "planet_mass":14.8,
+    "planet_mass_err":2.3,
+    "planet_radius":3.78,
+    "planet_radius_err":0.16,
+    "T_eq":462.0,
+    "T_eq_err":null,
+    "ref_name":"Turtelboom et al. 2022",
+    "eqt_refname":"Turtelboom et al. 2022"
+  },
+  "TOI-125 c":{
+    "planet_mass":6.63,
+    "planet_mass_err":0.99,
+    "planet_radius":2.759,
+    "planet_radius_err":0.1,
+    "T_eq":828.0,
+    "T_eq_err":9.0,
+    "ref_name":"Nielsen et al. 2020",
+    "eqt_refname":"Nielsen et al. 2020"
+  },
+  "TOI-125 d":{
+    "planet_mass":13.6,
+    "planet_mass_err":1.2,
+    "planet_radius":2.93,
+    "planet_radius_err":0.17,
+    "T_eq":638.0,
+    "T_eq_err":7.0,
+    "ref_name":"Nielsen et al. 2020",
+    "eqt_refname":"Nielsen et al. 2020"
+  },
+  "TOI-1260 b":{
+    "planet_mass":8.6,
+    "planet_mass_err":1.4,
+    "planet_radius":2.34,
+    "planet_radius_err":0.11,
+    "T_eq":860.0,
+    "T_eq_err":47.0,
+    "ref_name":"Georgieva et al. 2021",
+    "eqt_refname":"Georgieva et al. 2021"
+  },
+  "TOI-1272 b":{
+    "planet_mass":24.6,
+    "planet_mass_err":2.3,
+    "planet_radius":4.14,
+    "planet_radius_err":0.21,
+    "T_eq":961.0,
+    "T_eq_err":32.0,
+    "ref_name":"MacDougall et al. 2022",
+    "eqt_refname":"MacDougall et al. 2022"
+  },
+  "TOI-1634 b":{
+    "planet_mass":4.91,
+    "planet_mass_err":0.68,
+    "planet_radius":1.79,
+    "planet_radius_err":0.08,
+    "T_eq":924.0,
+    "T_eq_err":22.0,
+    "ref_name":"Cloutier et al. 2021",
+    "eqt_refname":"Hirano et al. 2021"
+  },
+  "TOI-1759 b":{
+    "planet_mass":10.8,
+    "planet_mass_err":1.5,
+    "planet_radius":3.14,
+    "planet_radius_err":0.1,
+    "T_eq":443.0,
+    "T_eq_err":7.0,
+    "ref_name":"Espinoza et al. 2022",
+    "eqt_refname":"Martioli et al. 2022"
+  },
+  "TOI-178 c":{
+    "planet_mass":4.77,
+    "planet_mass_err":0.55,
+    "planet_radius":1.669,
+    "planet_radius_err":0.114,
+    "T_eq":873.0,
+    "T_eq_err":18.0,
+    "ref_name":"Leleu et al. 2021",
+    "eqt_refname":"Leleu et al. 2021"
+  },
+  "TOI-220 b":{
+    "planet_mass":13.8,
+    "planet_mass_err":1.0,
+    "planet_radius":3.03,
+    "planet_radius_err":0.15,
+    "T_eq":805.0,
+    "T_eq_err":21.0,
+    "ref_name":"Hoyer et al. 2021",
+    "eqt_refname":"Hoyer et al. 2021"
+  },
+  "TOI-269 b":{
+    "planet_mass":8.8,
+    "planet_mass_err":1.4,
+    "planet_radius":2.77,
+    "planet_radius_err":0.12,
+    "T_eq":531.0,
+    "T_eq_err":25.0,
+    "ref_name":"Cointepas et al. 2021",
+    "eqt_refname":"Cointepas et al. 2021"
+  },
+  "TOI-270 b":{
+    "planet_mass":1.58,
+    "planet_mass_err":0.26,
+    "planet_radius":1.206,
+    "planet_radius_err":0.039,
+    "T_eq":581.0,
+    "T_eq_err":14.0,
+    "ref_name":"Van Eylen et al. 2021",
+    "eqt_refname":"Van Eylen et al. 2021"
+  },
+  "TOI-270 c":{
+    "planet_mass":6.15,
+    "planet_mass_err":0.37,
+    "planet_radius":2.355,
+    "planet_radius_err":0.064,
+    "T_eq":488.0,
+    "T_eq_err":12.0,
+    "ref_name":"Van Eylen et al. 2021",
+    "eqt_refname":"Van Eylen et al. 2021"
+  },
+  "TOI-270 d":{
+    "planet_mass":4.78,
+    "planet_mass_err":0.43,
+    "planet_radius":2.133,
+    "planet_radius_err":0.058,
+    "T_eq":387.0,
+    "T_eq_err":10.0,
+    "ref_name":"Van Eylen et al. 2021",
+    "eqt_refname":"Van Eylen et al. 2021"
+  },
+  "TOI-421 b":{
+    "planet_mass":7.17,
+    "planet_mass_err":0.66,
+    "planet_radius":2.68,
+    "planet_radius_err":0.19,
+    "T_eq":981.0,
+    "T_eq_err":16.0,
+    "ref_name":"Carleo et al. 2020",
+    "eqt_refname":"Carleo et al. 2020"
+  },
+  "TOI-421 c":{
+    "planet_mass":16.42,
+    "planet_mass_err":1.06,
+    "planet_radius":5.09,
+    "planet_radius_err":0.16,
+    "T_eq":674.0,
+    "T_eq_err":11.0,
+    "ref_name":"Carleo et al. 2020",
+    "eqt_refname":"Carleo et al. 2020"
+  },
+  "TOI-431 d":{
+    "planet_mass":9.9,
+    "planet_mass_err":1.53,
+    "planet_radius":3.29,
+    "planet_radius_err":0.09,
+    "T_eq":633.0,
+    "T_eq_err":14.0,
+    "ref_name":"Osborn et al. 2021",
+    "eqt_refname":"Osborn et al. 2021"
+  },
+  "TOI-561 c":{
+    "planet_mass":5.4,
+    "planet_mass_err":0.98,
+    "planet_radius":2.878,
+    "planet_radius_err":0.096,
+    "T_eq":860.0,
+    "T_eq_err":70.0,
+    "ref_name":"Lacedelli et al. 2020",
+    "eqt_refname":"Lacedelli et al. 2020"
+  },
+  "TOI-674 b":{
+    "planet_mass":23.6,
+    "planet_mass_err":3.3,
+    "planet_radius":5.25,
+    "planet_radius_err":0.17,
+    "T_eq":635.0,
+    "T_eq_err":15.0,
+    "ref_name":"Murgas et al. 2021",
+    "eqt_refname":"Murgas et al. 2021"
+  },
+  "TOI-763 c":{
+    "planet_mass":9.32,
+    "planet_mass_err":1.02,
+    "planet_radius":2.63,
+    "planet_radius_err":0.12,
+    "T_eq":800.0,
+    "T_eq_err":12.0,
+    "ref_name":"Fridlund et al. 2020",
+    "eqt_refname":"Fridlund et al. 2020"
+  },
+  "TRAPPIST-1 b":{
+    "planet_mass":1.374,
+    "planet_mass_err":0.069,
+    "planet_radius":1.116,
+    "planet_radius_err":0.014,
+    "T_eq":400.0,
+    "T_eq_err":8.0,
+    "ref_name":"Agol et al. 2021",
+    "eqt_refname":"Gillon et al. 2017"
+  },
+  "TRAPPIST-1 c":{
+    "planet_mass":1.308,
+    "planet_mass_err":0.056,
+    "planet_radius":1.097,
+    "planet_radius_err":0.014,
+    "T_eq":342.0,
+    "T_eq_err":7.0,
+    "ref_name":"Agol et al. 2021",
+    "eqt_refname":"Gillon et al. 2017"
+  },
+  "TRAPPIST-1 d":{
+    "planet_mass":0.388,
+    "planet_mass_err":0.012,
+    "planet_radius":0.788,
+    "planet_radius_err":0.011,
+    "T_eq":288.0,
+    "T_eq_err":6.0,
+    "ref_name":"Agol et al. 2021",
+    "eqt_refname":"Gillon et al. 2017"
+  },
+  "TRAPPIST-1 e":{
+    "planet_mass":0.692,
+    "planet_mass_err":0.022,
+    "planet_radius":0.92,
+    "planet_radius_err":0.013,
+    "T_eq":251.0,
+    "T_eq_err":5.0,
+    "ref_name":"Agol et al. 2021",
+    "eqt_refname":"Grimm et al. 2018"
+  },
+  "TRAPPIST-1 f":{
+    "planet_mass":1.039,
+    "planet_mass_err":0.031,
+    "planet_radius":1.045,
+    "planet_radius_err":0.013,
+    "T_eq":219.0,
+    "T_eq_err":4.0,
+    "ref_name":"Agol et al. 2021",
+    "eqt_refname":"Agol et al. 2021"
+  },
+  "TRAPPIST-1 g":{
+    "planet_mass":1.321,
+    "planet_mass_err":0.038,
+    "planet_radius":1.129,
+    "planet_radius_err":0.015,
+    "T_eq":199.0,
+    "T_eq_err":4.0,
+    "ref_name":"Agol et al. 2021",
+    "eqt_refname":"Gillon et al. 2017"
+  },
+  "Wolf 503 b":{
+    "planet_mass":6.26,
+    "planet_mass_err":0.69,
+    "planet_radius":2.043,
+    "planet_radius_err":0.069,
+    "T_eq":790.0,
+    "T_eq_err":15.0,
+    "ref_name":"Polanski et al. 2021",
+    "eqt_refname":"Polanski et al. 2021"
+  },
+  "Venus": {
+    "planet_mass":0.815,
+    "planet_mass_err":0,
+    "planet_radius":0.95,
+    "planet_radius_err":0,
+    "T_eq":226,
+    "T_eq_err":0,
+    "ref_name":"",
+    "eqt_refname":""
+  },
+  "Venus (Earth albedo)": {
+    "planet_mass":0.815,
+    "planet_mass_err":0,
+    "planet_radius":0.95,
+    "planet_radius_err":0,
+    "T_eq":299,
+    "T_eq_err":0,
+    "ref_name":"",
+    "eqt_refname":"(Assuming Earth's albedo)"
+  },
+  "Earth": {
+    "planet_mass":1,
+    "planet_mass_err":0,
+    "planet_radius":1,
+    "planet_radius_err":0,
+    "T_eq":255,
+    "T_eq_err":0,
+    "k2": 0.933,
+    "k2_err": 0,
+    "ref_name":"",
+    "eqt_refname":""
+},
+  "Mars":{
+    "planet_mass":0.107,
+    "planet_mass_err":0,
+    "planet_radius":0.532,
+    "planet_radius_err":0,
+    "T_eq":210,
+    "T_eq_err":0,
+    "ref_name":"",
+    "eqt_refname":""
+  },
+  "Uranus":{
+    "planet_mass":14.5,
+    "planet_mass_err":0,
+    "planet_radius":4.01,
+    "planet_radius_err":0,
+    "T_eq":100,
+    "T_eq_err":0,
+    "ref_name":"",
+    "eqt_refname":"(T_eq set to lowest value in parameter space)"
+  },
+  "Neptune":{
+    "planet_mass":17.1,
+    "planet_mass_err":0,
+    "planet_radius":3.88,
+    "planet_radius_err":0,
+    "T_eq":100,
+    "T_eq_err":0,
+    "k2": 0.392,
+    "k2_err": 0,
+    "ref_name":"",
+    "eqt_refname":"(T_eq set to lowest value in parameter space)"
+  }
+}

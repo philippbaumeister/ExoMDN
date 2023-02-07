@@ -15,12 +15,12 @@ from typing import List, Tuple
 class Model:
     def __init__(self, model_path: Path):
         self.model_path = model_path
-        self.model_name = self.model_path.name
 
         self.rng = np.random.default_rng()
 
         with open(model_path / "setup_parameters.json", "r") as f:
             self.parameters = json.load(f)
+        self.model_name = self.parameters.get("model_id", self.model_path.name)
         self.components = self.parameters["architecture"]["components"]
         self.inputs = self.parameters["inputs"]
         self.outputs = self.parameters["outputs"]
@@ -30,10 +30,13 @@ class Model:
         self.preprocessor = joblib.load(model_path / "preprocessor.pkl")
         self.keras_model = tf.keras.models.load_model(self.model_path / f"model",
                                                       custom_objects={"MDN": mdn.MDN,
-                                                                "mdn_loss_func": mdn.get_mixture_loss_func(
-                                                                    self.output_dim, self.components)})
+                                                                      "mdn_loss_func": mdn.get_mixture_loss_func(
+                                                                          self.output_dim, self.components)})
 
-        print(self.keras_model.summary())
+        print(f"Loaded model '{self.model_name}'")
+        print("=" * 65)
+        print("Model architecture:\n")
+        self.keras_model.summary()
 
         self.base = "core"
         self.layers = [f"{x}_{y}" for y in ["rf", "mf"] for x in ["core", "mantle", "ice", "atmosphere"]]
@@ -87,7 +90,7 @@ class Model:
         sample = self.logratio_transform(sample, inverse=True)
         return sample
 
-    def get_mixture_components(self, mixture: tfd.Mixture) -> pd.DataFrame :
+    def get_mixture_components(self, mixture: tfd.Mixture) -> pd.DataFrame:
         """
 
         Args:
@@ -104,7 +107,7 @@ class Model:
         df_var = pd.DataFrame(var.reshape(-1, self.output_dim), columns=["var_" + out for out in self.outputs])
 
         df = pd.concat([df_mean, df_var], axis=1)
-        df["prob"] = probs.reshape(-1)
+        df["weight"] = probs.reshape(-1)
         df["prediction"] = np.repeat(np.arange(means.shape[0]), means.shape[1])
         df = self.logratio_transform(df, inverse=True)
         return df
@@ -149,11 +152,14 @@ class Model:
         Returns:
 
         """
+        print(f"Running prediction (n={len(x)}):")
         prediction = self.keras_model.predict(self.preprocessor.transform(np.array(x)))
         mixture = self.construct_mixture(prediction)
+        print(f"Sampling from mixture ({len(x)}x{samples} samples):")
         df = self.sample_from_mixture(mixture, samples)
         df_components = self.get_mixture_components(mixture)
         input_prompt = pd.DataFrame(x, columns=self.inputs)
+        input_prompt.rename_axis("prediction", inplace=True)
         return df, df_components, input_prompt
 
     def predict_with_error(self, x: List, errors: List, samples: Tuple[int, int] = (1000, 100)) \
@@ -168,22 +174,25 @@ class Model:
         Returns:
 
         """
-        mr_samples = pd.DataFrame(self.rng.multivariate_normal(mean=x, cov=np.diag(np.power(errors, 2)),
-                                                               size=samples[0]),
-                                  columns=self.inputs)
-        initial_length = len(mr_samples)
+        uncertainty_samples = pd.DataFrame(self.rng.multivariate_normal(mean=x, cov=np.diag(np.power(errors, 2)),
+                                                                        size=samples[0]),
+                                           columns=self.inputs)
+        uncertainty_samples.rename_axis("prediction", inplace=True)
+        initial_length = len(uncertainty_samples)
         for value in self.inputs:
             if value in self.input_properties:
                 props = self.input_properties[value]
-                min_value = props.get("min_value", mr_samples[value].min())
-                max_value = props.get("max_value", mr_samples[value].max())
-                mr_samples = mr_samples.query(f"{value}.between({min_value}, {max_value})")
-        dropped_samples = initial_length - len(mr_samples)
+                min_value = props.get("min_value", uncertainty_samples[value].min())
+                max_value = props.get("max_value", uncertainty_samples[value].max())
+                uncertainty_samples = uncertainty_samples.query(f"{value}.between({min_value}, {max_value})")
+        dropped_samples = initial_length - len(uncertainty_samples)
         if dropped_samples > 0:
             print(f"{dropped_samples} points are outside the parameter limits and will not be used in the prediction. "
-                  f"Current number of samples: {len(mr_samples) * samples[1]}")
-        prediction = self.keras_model.predict(self.preprocessor.transform(mr_samples.to_numpy()))
+                  f"Current number of samples: {len(uncertainty_samples) * samples[1]}")
+        print(f"Running prediction (n={len(uncertainty_samples)}):")
+        prediction = self.keras_model.predict(self.preprocessor.transform(uncertainty_samples.to_numpy()))
         mixture = self.construct_mixture(prediction)
+        print(f"Sampling from mixture ({len(uncertainty_samples)}x{samples[1]} samples):")
         df = self.sample_from_mixture(mixture, samples[1])
         df_components = self.get_mixture_components(mixture)
-        return df, df_components, mr_samples
+        return df, df_components, uncertainty_samples
