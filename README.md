@@ -18,7 +18,7 @@ conda env activate exomdn
 
 ### Using pip
 
-This project requires Python 3.
+This project requires Python 3.7 or higher.
 
 Install the required packages and dependencies using
 ```
@@ -27,6 +27,7 @@ pip install -r requirements.txt
 
 ### Required packages
 
+- python>=3.7
 - tensorflow=2.11
 - tensorflow-probability=0.15
 - scikit-learn=0.11
@@ -41,5 +42,9 @@ pip install -r requirements.txt
 
 ## Getting started
 
-## Acknowledgements
+Interactive widgets are included in ExoMDN to simplify loading an MDN model and running a prediction. 
+To get started check out `introduction.ipynb` in the *notebooks* directory. There you'll also find more in-depth 
+examples.
 
+## Acknowledgements
+We are using the MDN layer for Keras by https://github.com/cpmpercussion/keras-mdn-layer 
