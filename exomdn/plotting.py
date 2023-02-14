@@ -14,14 +14,14 @@ labels = {
     "atmosphere_mf": "w$_\\mathrm{Gas}$",
     "mantle_rf": "d$_\\mathrm{Mantle}$",
     "mantle_mf": "w$_\\mathrm{Mantle}$",
-    "ice_rf": "d$_\\mathrm{Water}$",
-    "ice_mf": "w$_\\mathrm{Water}$",
+    "water_rf": "d$_\\mathrm{Water}$",
+    "water_mf": "w$_\\mathrm{Water}$",
     "log_d_atmosphere_core": "ln d$_\\mathrm{Gas}$/d$_\\mathrm{Core}$",
     "log_m_atmosphere_core": "ln w$_\\mathrm{Gas}$/w$_\\mathrm{Core}$",
     "log_d_mantle_core": "ln d$_\\mathrm{Mantle}$/d$_\\mathrm{Core}$",
     "log_m_mantle_core": "ln w$_\\mathrm{Mantle}$/w$_\\mathrm{Core}$",
-    "log_d_ice_core": "ln d$_\\mathrm{Water}$/d$_\\mathrm{Core}$",
-    "log_m_ice_core": "ln w$_\\mathrm{Water}$/w$_\\mathrm{Core}$"
+    "log_d_water_core": "ln d$_\\mathrm{Water}$/d$_\\mathrm{Core}$",
+    "log_m_water_core": "ln w$_\\mathrm{Water}$/w$_\\mathrm{Core}$"
     }
 
 

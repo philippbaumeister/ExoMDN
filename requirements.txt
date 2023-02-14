@@ -1,5 +1,5 @@
-tensorflow==2.11.0
-tensorflow-probability==0.15.0
+tensorflow==2.11.*
+tensorflow-probability==0.15.*
 scikit-learn==1.1.1
 joblib
 numpy
@@ -9,3 +9,4 @@ jupyter
 matplotlib
 seaborn
 ipywidgets
+setuptools

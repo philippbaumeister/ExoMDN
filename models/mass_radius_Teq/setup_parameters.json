@@ -7,10 +7,10 @@
     ],
     "outputs": [
         "log_d_mantle_core",
-        "log_d_ice_core",
+        "log_d_water_core",
         "log_d_atmosphere_core",
         "log_m_mantle_core",
-        "log_m_ice_core",
+        "log_m_water_core",
         "log_m_atmosphere_core"
     ],
     "architecture": {

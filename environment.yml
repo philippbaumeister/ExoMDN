@@ -1,9 +1,9 @@
 name: exomdn
 dependencies:
-    - python=3.10
+    - python=3.10.*
     - tensorflow=2.11.*
     - tensorflow-probability=0.15.*
-    - scikit-learn=0.11.*
+    - scikit-learn=1.1.1
     - numpy
     - pandas
     - scipy
@@ -12,3 +12,4 @@ dependencies:
     - joblib
     - ipywidgets
     - jupyter
+    - pip

@@ -1,16 +1,15 @@
 import json
 from pathlib import Path
-import importlib.resources
 
 from exomdn.widgets import PredictionWidget, LoadModelWidget
 
 
 class ExoMDN:
-    def __init__(self) -> None:
+    def __init__(self, model_path="../models", data_path="../data") -> None:
         self.model = None
 
-        self.model_path = importlib.resources.path("models", "")
-        self.data_path = importlib.resources.path("data", "")
+        self.model_path = Path(model_path)
+        self.data_path = Path(data_path)
         self.input_prompt = None
         self.prediction = None
         self.mixture_components = None

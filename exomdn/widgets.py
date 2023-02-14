@@ -59,8 +59,11 @@ class PredictionWidget(widgets.VBox):
         super().__init__()
         self.parent = parent
 
-        with open(self.parent.data_path / "exoplanets.json", "r") as f:
-            self.exoplanet_data = json.load(f)
+        try:
+            with open(self.parent.data_path / "exoplanets.json", "r") as f:
+                self.exoplanet_data = json.load(f)
+        except FileNotFoundError:
+            self.exoplanet_data = {}
 
         # Tab 'planet parameters'
         self.use_error = widgets.Checkbox(value=False, description="Include uncertainties?", indent=True)
@@ -101,6 +104,9 @@ class PredictionWidget(widgets.VBox):
         self.planet_info = widgets.Output(layout=widgets.Layout(width="60%", height="200px"))
         self.load_planet_data_button = widgets.Button(description="Load selected planet",
                                                       layout=widgets.Layout(width="30%"))
+        if len(self.exoplanet_data) == 0:
+            with self.planet_info:
+                print(f"No file 'exoplanets.json' found in datapath {self.parent.data_path}")
         tab3 = widgets.VBox([widgets.HBox([self.planet_selection, self.planet_info]), self.load_planet_data_button])
 
         self.tab = widgets.Accordion()

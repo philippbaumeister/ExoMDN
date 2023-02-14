@@ -9,16 +9,16 @@ from tensorflow_probability import distributions as tfd
 import exomdn.mdn_layer as mdn
 import exomdn.log_ratio as logratio
 
-from typing import List, Tuple
+from typing import List, Tuple, Union
 
 
 class Model:
-    def __init__(self, model_path: Path):
-        self.model_path = model_path
+    def __init__(self, model_path: Union[str, Path]):
+        self.model_path = Path(model_path)
 
         self.rng = np.random.default_rng()
 
-        with open(model_path / "setup_parameters.json", "r") as f:
+        with open(self.model_path / "setup_parameters.json", "r") as f:
             self.parameters = json.load(f)
         self.model_name = self.parameters.get("model_id", self.model_path.name)
         self.components = self.parameters["architecture"]["components"]
@@ -27,7 +27,7 @@ class Model:
         self.input_properties = self.parameters.get("input_properties", {})
         self.output_dim = len(self.outputs)
 
-        self.preprocessor = joblib.load(model_path / "preprocessor.pkl")
+        self.preprocessor = joblib.load(self.model_path / "preprocessor.pkl")
         self.keras_model = tf.keras.models.load_model(self.model_path / f"model",
                                                       custom_objects={"MDN": mdn.MDN,
                                                                       "mdn_loss_func": mdn.get_mixture_loss_func(
@@ -39,14 +39,14 @@ class Model:
         self.keras_model.summary()
 
         self.base = "core"
-        self.layers = [f"{x}_{y}" for y in ["rf", "mf"] for x in ["core", "mantle", "ice", "atmosphere"]]
+        self.layers = [f"{x}_{y}" for y in ["rf", "mf"] for x in ["core", "mantle", "water", "atmosphere"]]
         self.rf_base = f"{self.base}_rf"
         self.rf_outputs = self.outputs[:3]
-        self.rf_layers = ["core_rf", "mantle_rf", "ice_rf", "atmosphere_rf"]
+        self.rf_layers = ["core_rf", "mantle_rf", "water_rf", "atmosphere_rf"]
         self._rf_layers_nb = sorted(set(self.rf_layers).difference({f"{self.base}_rf"}), key=self.rf_layers.index)
         self.mf_base = f"{self.base}_mf"
         self.mf_outputs = self.outputs[3:]
-        self.mf_layers = ["core_mf", "mantle_mf", "ice_mf", "atmosphere_mf"]
+        self.mf_layers = ["core_mf", "mantle_mf", "water_mf", "atmosphere_mf"]
         self._mf_layers_nb = sorted(set(self.mf_layers).difference({f"{self.base}_mf"}), key=self.mf_layers.index)
         self._current_data = None
         self._current_components = None
@@ -152,10 +152,10 @@ class Model:
         Returns:
 
         """
-        print(f"Running prediction (n={len(x)}):")
+        print(f"Running prediction (n={len(x)})")
         prediction = self.keras_model.predict(self.preprocessor.transform(np.array(x)))
         mixture = self.construct_mixture(prediction)
-        print(f"Sampling from mixture ({len(x)}x{samples} samples):")
+        print(f"Sampling from mixture ({len(x)}x{samples} samples)")
         df = self.sample_from_mixture(mixture, samples)
         df_components = self.get_mixture_components(mixture)
         input_prompt = pd.DataFrame(x, columns=self.inputs)

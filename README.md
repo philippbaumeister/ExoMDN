@@ -11,9 +11,15 @@ packages:
 ```
 conda env create -f environment.yml
 ```
+
 Activate the environment:
 ```
 conda env activate exomdn
+```
+
+Then install the *exomdn* package by running
+```
+pip install -e .
 ```
 
 ### Using pip
@@ -23,6 +29,11 @@ This project requires Python 3.7 or higher.
 Install the required packages and dependencies using
 ```
 pip install -r requirements.txt
+```
+
+Then install the *exomdn* package by running
+```
+pip install -e .
 ```
 
 ### Required packages
