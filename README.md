@@ -41,7 +41,7 @@ pip install -e .
 - python>=3.7
 - tensorflow=2.11
 - tensorflow-probability=0.15
-- scikit-learn=0.11
+- scikit-learn=1.1.1
 - numpy
 - pandas
 - scipy
