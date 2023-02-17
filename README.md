@@ -14,7 +14,7 @@ conda env create -f environment.yml
 
 Activate the environment:
 ```
-conda env activate exomdn
+conda activate exomdn
 ```
 
 Then install the *exomdn* package by running

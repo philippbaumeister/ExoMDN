@@ -1,4 +1,6 @@
 name: exomdn
+channels:
+    - conda-forge
 dependencies:
     - python=3.10.*
     - tensorflow=2.11.*
