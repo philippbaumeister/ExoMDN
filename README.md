@@ -1,6 +1,7 @@
 ![ExoMDN](banner.png "Rapid characterization of exoplanet interiors")
 # Rapid characterization of exoplanet interiors with Mixture Density Networks
 ![MIT License](https://img.shields.io/github/license/philippbaumeister/MDN_exoplanets.svg?style=flat-square)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7670706.svg?style=flat-square)](https://doi.org/10.5281/zenodo.7670706)
 
 ExoMDN is a machine-learning-based exoplanet interior inference model using Mixture Density Networks. The model is 
 trained on more than 5.6 million synthetic planet interior structures. Given mass, radius, and equilibrium 
