@@ -2,6 +2,9 @@
 # Rapid characterization of exoplanet interiors with Mixture Density Networks
 ![MIT License](https://img.shields.io/github/license/philippbaumeister/MDN_exoplanets.svg?style=flat-square)
 
+ExoMDN is a machine-learning-based exoplanet interior inference model using Mixture Density Networks. ExoMDN is
+which is capable of providing a full inference of the interior structure of low-mass exoplanets in under a second without the need for a dedicated interior model.
+
 ## Installation
 
 ### Using conda (preferred)
@@ -54,8 +57,8 @@ pip install -e .
 ## Getting started
 
 Interactive widgets are included in ExoMDN to simplify loading an MDN model and running a prediction. 
-To get started check out `introduction.ipynb` in the *notebooks* directory. There you'll also find more in-depth 
-examples.
+To get started check out `introduction.ipynb`. More in-depth examples can be found in the *notebooks* directory and 
+more will be added over time.
 
 ## Acknowledgements
 We are using the MDN layer for Keras by https://github.com/cpmpercussion/keras-mdn-layer 

@@ -14,6 +14,12 @@
         "log_m_water_core",
         "log_m_atmosphere_core"
     ],
+    "epochs": 500,
+    "batch_size": 1000,
+    "patience": 8,
+    "patience_lr": 4,
+    "validation_size": 0.3,
+    "seed": 13,
     "architecture": {
         "n_layers": 3,
         "units_per_layer": 896,

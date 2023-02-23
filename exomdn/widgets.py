@@ -33,11 +33,11 @@ class LoadModelWidget(widgets.VBox):
         self.load_model_button.on_click(self.on_load_model_button_clicked)
 
     def update_model_list(self):
-        available_models = [f.name for f in os.scandir(self.models_path) if f.is_dir()]
-        self.select_model.options = available_models
+        available_models = [f.name for f in os.scandir(self.models_path) if (f.is_dir() and not f.name.startswith("_"))]
+        self.select_model.options = sorted(available_models)
 
     def on_load_model_button_clicked(self, b):
-        self.output.clear_output(wait=True)
+        self.output.clear_output()
         if self.select_model.value is None:
             with self.output:
                 print("No model selected!")
@@ -181,7 +181,7 @@ class PredictionWidget(widgets.VBox):
                     value_err = 0
                 self.parameter_inputs[key].parameter.value = value
                 self.parameter_inputs[key].error.value = value_err
-            print("--- Loaded planet parameters ---")
+            print("--- Updated planet parameters ---")
 
     def on_select_planet_data_change(self, change):
         self.planet_info.clear_output()

@@ -1,0 +1,38 @@
+{
+"planet_mass": {
+    "description": "Planet mass",
+    "min_value": 0.1,
+    "max_value": 25,
+    "default_value": 1,
+    "label": "$M_P$",
+    "unit": "$M_\\oplus$",
+    "step": 0.1
+    },
+"planet_radius": {
+    "description": "Planet radius",
+    "min_value": 0,
+    "max_value": 10,
+    "default_value": 1,
+    "label": "$R_P$",
+    "unit": "$R_\\oplus$",
+    "step": 0.1
+    },
+"k2": {
+    "description": "Fluid Love number",
+    "min_value": 0,
+    "max_value": 1.5,
+    "default_value": 0.933,
+    "label": "$k_2$",
+    "unit": "",
+    "step": 0.1
+    },
+"T_eq": {
+    "description": "Equilibrium temperature",
+    "min_value": 100,
+    "max_value": 1000,
+    "default_value": 255,
+    "label": "$T_{eq}$",
+    "unit": "$K$",
+    "step": 1
+    }
+}

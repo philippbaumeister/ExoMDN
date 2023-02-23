@@ -1,0 +1,28 @@
+{
+    "model_id": "training_demo",
+    "training_data": "demo_training_data.csv",
+    "inputs": [
+        "planet_mass", 
+        "planet_radius", 
+        "T_eq"],
+    "outputs": [
+        "log_d_mantle_core",
+        "log_d_water_core",
+        "log_d_atmosphere_core",
+        "log_m_mantle_core",
+        "log_m_water_core",
+        "log_m_atmosphere_core"
+    ],
+    "epochs": 500,
+    "batch_size": 750,
+    "patience": 8,
+    "patience_lr": 4,
+    "validation_size": 0.3,
+    "seed": 42,
+    "architecture": {
+        "n_layers": 3,
+        "units_per_layer": 350,
+        "components": 50,
+        "learning_rate": 0.001
+    }
+}

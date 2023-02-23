@@ -101,7 +101,8 @@ def cornerplot(data, columns, height=2, quantiles=True, hist_kws=None, hexbin_kw
         high = desc["95%"] - desc["50%"]
         low = desc["50%"] - desc["5%"]
 
-        title = labels[df.name] + f"={desc['50%']:.2f}" + "$_{" + f"-{low:.2f}" + "}" + "^{" + f"+{high:.2f}" + "}$"
+        label = labels.get(df.name, df.name)
+        title = label + f"={desc['50%']:.2f}" + "$_{" + f"-{low:.2f}" + "}" + "^{" + f"+{high:.2f}" + "}$"
         plt.title(title, ha="center", va="bottom", fontsize=mpl.rcParams["axes.labelsize"])
 
     g = sns.PairGrid(data=data, vars=columns, height=height, diag_sharey=False, corner=True)
