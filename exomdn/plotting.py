@@ -71,7 +71,7 @@ def cornerplot_logratios(data, columns, data_components=None, height=2.5,
     return g
 
 
-def cornerplot(data, columns, height=2, quantiles=True, hist_kws=None, hexbin_kws=None, line_kws=None):
+def cornerplot(data, columns, height=2, quantiles=True, hist_kws=None, hexbin_kws=None, line_kws=None, **kwargs):
     if line_kws is None:
         line_kws = {}
     if hexbin_kws is None:
@@ -105,7 +105,7 @@ def cornerplot(data, columns, height=2, quantiles=True, hist_kws=None, hexbin_kw
         title = label + f"={desc['50%']:.2f}" + "$_{" + f"-{low:.2f}" + "}" + "^{" + f"+{high:.2f}" + "}$"
         plt.title(title, ha="center", va="bottom", fontsize=mpl.rcParams["axes.labelsize"])
 
-    g = sns.PairGrid(data=data, vars=columns, height=height, diag_sharey=False, corner=True)
+    g = sns.PairGrid(data=data, vars=columns, height=height, diag_sharey=False, corner=True, **kwargs)
     g.map_diag(sns.histplot, **_hist_kws)
     if quantiles:
         g.map_diag(plot_quantiles, **_line_kws)
@@ -115,8 +115,8 @@ def cornerplot(data, columns, height=2, quantiles=True, hist_kws=None, hexbin_kw
     for ax in g.axes.ravel():
         if ax is None:
             continue
-        ax.xaxis.set_minor_locator(MultipleLocator(0.1))
-        ax.yaxis.set_minor_locator(MultipleLocator(0.1))
+        # ax.xaxis.set_minor_locator(MultipleLocator(0.1))
+        # ax.yaxis.set_minor_locator(MultipleLocator(0.1))
 
     g = relabel_axes(g)
     return g

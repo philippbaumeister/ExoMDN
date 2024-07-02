@@ -9,6 +9,7 @@ from tensorflow_probability import distributions as tfd
 import exomdn.mdn_layer as mdn
 import exomdn.log_ratio as logratio
 
+from numpy.polynomial import Polynomial
 from typing import List, Tuple, Union
 
 
@@ -162,7 +163,7 @@ class Model:
         input_prompt.rename_axis("prediction", inplace=True)
         return df, df_components, input_prompt
 
-    def predict_with_error(self, x: List, errors: List, samples: Tuple[int, int] = (1000, 100)) \
+    def predict_with_error(self, x: List, errors: List, samples: Tuple[int, int] = (1000, 100), extra_query="") \
             -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
         """
 
@@ -179,12 +180,21 @@ class Model:
                                            columns=self.inputs)
         uncertainty_samples.rename_axis("prediction", inplace=True)
         initial_length = len(uncertainty_samples)
+
+        if "planet_radius" in self.inputs and "planet_mass" in self.inputs:
+            min_radius = self.min_planet_radius(uncertainty_samples["planet_mass"])
+            uncertainty_samples = uncertainty_samples[uncertainty_samples["planet_radius"] > min_radius]
+
         for value in self.inputs:
             if value in self.input_properties:
                 props = self.input_properties[value]
                 min_value = props.get("min_value", uncertainty_samples[value].min())
                 max_value = props.get("max_value", uncertainty_samples[value].max())
                 uncertainty_samples = uncertainty_samples.query(f"{value}.between({min_value}, {max_value})")
+        
+        if extra_query:
+            uncertainty_samples = uncertainty_samples.query(extra_query)
+
         dropped_samples = initial_length - len(uncertainty_samples)
         if dropped_samples > 0:
             print(f"{dropped_samples} points are outside the parameter limits and will not be used in the prediction. "
@@ -196,3 +206,11 @@ class Model:
         df = self.sample_from_mixture(mixture, samples[1])
         df_components = self.get_mixture_components(mixture)
         return df, df_components, uncertainty_samples
+
+    @staticmethod
+    def min_planet_radius(mass):
+        # Power law fit to 100% iron
+        # Returns radius in Re
+        coef = [-0.22381715,  0.27825493, -0.00753378]
+        p = Polynomial(coef)
+        return np.exp(p(np.log(mass)))
