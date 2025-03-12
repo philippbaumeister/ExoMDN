@@ -1,9 +1,9 @@
-name: exomdn2
+name: exomdn
 channels:
     - conda-forge
 dependencies:
     - python=3.10.*
-    - tensorflow=2.*
+    - tensorflow<2.16
     - tensorflow-probability=0.15.*
     - scikit-learn=1.1.1
     - numpy
