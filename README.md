@@ -2,14 +2,14 @@
 # Rapid characterization of exoplanet interiors with Mixture Density Networks
 ![MIT License](https://img.shields.io/github/license/philippbaumeister/MDN_exoplanets.svg?style=flat-square)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.7670706-blue?style=flat-square)](https://doi.org/10.5281/zenodo.7670706)
-[![arxiv](https://img.shields.io/badge/ArXiv-2306.09002-red?style=flat-square)](https://doi.org/10.48550/arXiv.2306.09002)
+[![Paper](https://img.shields.io/badge/Paper-10.1051%2F0004--6361%2F202346216-red?style=flat-square)](https://doi.org/10.1051/0004-6361/202346216)
 
 ExoMDN is a machine-learning-based exoplanet interior inference model using Mixture Density Networks. The model is 
 trained on more than 5.6 million synthetic planet interior structures. Given mass, radius, and equilibrium 
 temperature, ExoMDN is capable of providing a full inference of the interior structure of low-mass exoplanets in 
 under a second without the need for a dedicated interior model.
 
-This repository contains the trained models shown Baumeister & Tosi 2023 (accepted in A&A), as well as Python 
+This repository contains the trained models shown [Baumeister & Tosi 2023](https://doi.org/10.1051/0004-6361/202346216), as well as Python 
 notebooks to load the models and run interior predictions of exoplanets. Interactive widgets are included 
 to simplify loading an MDN model and running a prediction. 
 We also make available the training routines in `more_examples/model_training_demo.ipynb`.
