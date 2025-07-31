@@ -2,7 +2,7 @@ tensorflow==2.11.*
 tensorflow-probability==0.15.*
 scikit-learn==1.1.1
 joblib
-numpy
+numpy==1.26.*
 pandas
 scipy
 jupyter
