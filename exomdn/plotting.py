@@ -147,7 +147,7 @@ def confidence_ellipse(x, y, **kwargs):
         # Plot an ellipse to show the Gaussian component
         angle = np.arctan(u[1] / (u[0] + 1e-12))
         angle = 180. * angle / np.pi  # convert to degrees
-        ell = mpl.patches.Ellipse(mean, v[0], v[1], 180. + angle, color=cmap.to_rgba(prob), zorder=prob + 1)
+        ell = mpl.patches.Ellipse(mean, v[0], v[1], angle=180. + angle, color=cmap.to_rgba(prob), zorder=prob + 1)
         ell.set_clip_box(ax.bbox)
         alpha = min(1, (prob - min_p) / (max_p - min_p) * (max_alpha - min_alpha) + min_alpha)
         ell.set_alpha(alpha)  # ell_kws.get("alpha", 0.5))
