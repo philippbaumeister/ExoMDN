@@ -162,7 +162,7 @@ class PredictionWidget(widgets.VBox):
             self.output.clear_output(wait=True)
             if use_uncertainty:
                 self.parent.prediction, self.parent.mixture_components, self.parent.input_prompt = \
-                    self.parent.model.predict_with_error(x=values, errors=errors, samples=(subsamples, samples))
+                    self.parent.model.predict_with_error(x=[values], errors=[errors], samples=(subsamples, samples))
             else:
                 self.parent.prediction, self.parent.mixture_components, self.parent.input_prompt = \
                     self.parent.model.predict(x=[values], samples=samples)
