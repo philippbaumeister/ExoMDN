@@ -37,6 +37,7 @@ pip install -e .
 ### Using pip
 
 This project requires Python 3.7 or higher.
+Currently, due to incompatibility with higher tensorflow versions, ExoMDN does not work well with Python versions above 3.11
 
 Install the required packages and dependencies using
 ```
